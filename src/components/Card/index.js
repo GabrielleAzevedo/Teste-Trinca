@@ -3,23 +3,25 @@ import {Card, CardInfo, CardIcons, Date, Title, Description, Icon, Number, DataI
 import people from '../../assets/icons/people.svg';
 import money from '../../assets/icons/money.svg';
 
+function Index(props) {
 
-function index() {
+    const barbecue = props.dadosbbq;
+    console.log(props.dadosbbq)
     return (
         <Card>
             <CardInfo>
-                <Date>25/12</Date>
-                <Title>Niver Gabi</Title>
-                <Description>Aniversário regado à Churras</Description>
+                <Date>{barbecue.date}</Date>
+                <Title>{barbecue.title}</Title>
+                <Description>{barbecue.description}</Description>
             </CardInfo>
             <CardIcons>
                 <Number> 
                     <Icon src={people} alt="Ícone Pessoas" /> 
-                    <DataIcon> 12 </DataIcon>
+                    <DataIcon> {barbecue.numberParticipants} </DataIcon>
                 </Number>
                 <Number> 
                     <Icon src={money} alt="Ícone Moeda" /> 
-                    <DataIcon> 407 </DataIcon>
+                    <DataIcon> {barbecue.receivedMoney} </DataIcon>
 
                 </Number>
             </CardIcons>
@@ -27,4 +29,4 @@ function index() {
     )
 }
 
-export default index
+export default Index

@@ -1,18 +1,21 @@
 import React from 'react'
 import {Container, Label, Checkbox, Value} from './styles';
 
-function index() {
+function Index(props) {
+
+    const participants = props.dadosParticipants;
+
     return (
         <Container>
             <Label>
                 <Checkbox 
                     type="checkbox" value="person" 
                 />
-                Teste
+                {participants.name}
             </Label>
-            <Value>R$12,00</Value>
+            <Value>R${participants.valuePayment}</Value>
         </Container>
     )
 }
 
-export default index
+export default Index

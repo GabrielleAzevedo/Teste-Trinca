@@ -4,28 +4,32 @@ import people from '../../../assets/icons/people.svg';
 import money from '../../../assets/icons/money.svg';
 
 
-function index() {
+function Index(props) {
+
+    const headBbq = props.dataBbq;
+    
+
     return (
         <Container>
             <Info>
-                <Date>01/12</Date>
-                <Title>Niver do Gui</Title>
+                <Date>{headBbq.date}</Date>
+                <Title>{headBbq.title}</Title>
                 <Description>
-                    Testando sla o que, pq quero ver como vai ficar e indo ao infinito e além para ver a divisão        
+                    {headBbq.description}     
                 </Description>
             </Info>
             <IconsDetail>
                 <IconInfo>
                     <Icon src={people} alt="Ícone Pessoas" />
-                    <DataIcon>12</DataIcon> 
+                    <DataIcon>{headBbq.numberParticipants}</DataIcon> 
                 </IconInfo>
                 <IconInfo>
                     <Icon src={money} alt="Ícone Moeda" /> 
-                    <DataIcon>R$407</DataIcon> 
+                    <DataIcon> R${headBbq.receivedMoney} </DataIcon> 
                 </IconInfo>
             </IconsDetail>
         </Container>
     )
 }
 
-export default index
+export default Index

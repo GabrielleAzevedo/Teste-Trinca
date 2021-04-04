@@ -47,6 +47,17 @@ const GlobalStyle = createGlobalStyle`
         color: var(--color-font);
     }
 
+    a{
+        text-decoration: none;
+        color: var(--color-font);
+
+
+        &:visited,
+        &:hover,
+        &:active{
+            color: var(--color-font);
+        }
+    }
 
     @media (min-width: 700px){
         :root{

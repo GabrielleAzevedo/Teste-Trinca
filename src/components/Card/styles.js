@@ -19,6 +19,8 @@ export const Card = styled.div`
 
   background-color: var(--color-bg-card);
 
+  cursor:pointer;
+
 `;
 
 export const CardInfo = styled.div``;

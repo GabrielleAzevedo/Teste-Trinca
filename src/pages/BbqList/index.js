@@ -3,13 +3,24 @@ import Card from '../../components/Card/index'
 import {Container, Cards, CardNewBbq, Circle, ChurrasIcon, TextNewBbq} from './styles';
 import bbq from '../../assets/icons/bbq.svg';
 
+import {Link} from 'react-router-dom'
 
-function index() {
+import { useSelector } from 'react-redux';
+
+
+function Index() {
+
+    const barbecue = useSelector(state => state.barbecue);
+
     return (
         <Container>
             <Cards>
-                <Card />
-                <Card />
+                {barbecue.map(barbecue =>
+                    <Link to={`/detalhe/${barbecue.id}`}> <Card key={barbecue.title} dadosbbq={barbecue} />
+                    </Link>
+                    
+                )}
+                
                 <CardNewBbq>
                     <Circle>
                         <ChurrasIcon src={bbq} alt="Ícone Churrasco" />
@@ -22,4 +33,4 @@ function index() {
     )
 }
 
-export default index
+export default Index
