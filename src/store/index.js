@@ -44,7 +44,7 @@ const initialState = {
                     },
                     {
                         name: 'Pedro Henrique',
-                        valuePayment: 20,
+                        valuePayment: 10,
                         payed: false,
                     }
                 ]
@@ -66,6 +66,21 @@ function reducer(state = initialState, action){
             return{
                 ...state,
                 barbecue: action.barbecue,
+                numberId: action.numberId,
+            }
+        case 'SET_PARTICIPANT_PAYMENT':
+            return{
+                ...state, 
+                barbecue: [...state.barbecue, {
+                    ...action,
+                 }] 
+            }
+        case 'SET_ID_BBQ':
+            return{
+                ...state, 
+                numberId: [...state.numberId, {
+                    ...action,
+                 }]
             }
         default:
             return state;

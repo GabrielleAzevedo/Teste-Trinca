@@ -14,7 +14,7 @@ const Index = () => {
 
     const history = useNavigate();
 
-    const idBbqStore = useSelector( state => state.numberId);
+    const barbecue = useSelector( state => state.barbecue);
 
     const dateBbq = useForms();
     const titleBbq = useForms();
@@ -24,11 +24,16 @@ const Index = () => {
 
     function handleSubmit(event){
         event.preventDefault();
+
+        let lengthBbq = barbecue.length;
+        console.log(barbecue);
+        
+        
         dispatch(
             { 
                 type: 'ADD_BARBECUE', 
 
-                id: idBbqStore+1,
+                id: lengthBbq,
                 date: dateBbq.value,
                 title: titleBbq.value,
                 description: descriptionBbq.value,
@@ -36,9 +41,12 @@ const Index = () => {
                 withDrink: drinkBbq.value,
                 receivedMoney: 0,
                 numberParticipants: 0, 
-                participants: [],
-            }
+                participants: [],   
+            },
+            
         );
+        
+        
         return history('/');
     }
 
