@@ -62,9 +62,9 @@ function Index() {
         
         
         if(personPayed===true){
-            money -= personValuePayment;
+            money -= +personValuePayment;
         }else{
-            money += personValuePayment;
+            money += +personValuePayment;
         }   
 
         bbq.receivedMoney = money;
@@ -78,6 +78,7 @@ function Index() {
             }
         );
         
+        console.log(bbq.receivedMoney);
         
         return history(`/detalhe/${id}`);
         
