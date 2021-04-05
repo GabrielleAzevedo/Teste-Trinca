@@ -26,9 +26,6 @@ const Index = () => {
         event.preventDefault();
 
         let lengthBbq = barbecue.length;
-        console.log(barbecue);
-        
-        
         dispatch(
             { 
                 type: 'ADD_BARBECUE', 

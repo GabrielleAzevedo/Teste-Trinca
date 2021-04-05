@@ -1,7 +1,6 @@
 import {createStore} from 'redux';
 
 const initialState = {
-    numberId: 1,
     barbecue: [
         {
             id:0,

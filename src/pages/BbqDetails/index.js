@@ -1,7 +1,6 @@
 import React from 'react';
 import {Container, Card, Form,  Select, Button, Option, List, ContainerCheckbox, Label, Checkbox, Value} from './styles';
 import Head from './BbqDetailsHeader/index';
-// import ItemList from './ListParticipants/index';
 import Input from '../../components/Input/index'
 
 import { useParams } from "react-router-dom";
@@ -23,7 +22,6 @@ function Index() {
     const tempParticipants = bbqId.participants;
 
     const payed = bbqId.participants.payed;
-    // console.
 
 
     let nameParticipant = useForms();
@@ -80,13 +78,7 @@ function Index() {
             }
         );
         
-        // let barb = barbecue;
-        // barb[id].numberParticipants = barb[id].numberParticipants + 1;
-        // barb[id].participants.push({
-        //     name: nameParticipant.value,
-        //     payed: false,
-        //     valuePayment: select,
-        // });
+        
         return history(`/detalhe/${id}`);
         
         

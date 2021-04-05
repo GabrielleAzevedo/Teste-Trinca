@@ -53,7 +53,3 @@ export const ChurrasIcon = styled.img`
 export const TextNewBbq = styled.h2`
   font-size: 2.1rem;
 `;
-
-// export const Container = styled.div`
-  
-// `;

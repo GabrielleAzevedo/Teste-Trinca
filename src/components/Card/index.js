@@ -6,7 +6,6 @@ import money from '../../assets/icons/money.svg';
 function Index(props) {
 
     const barbecue = props.dadosbbq;
-    console.log(props.dadosbbq)
     return (
         <Card>
             <CardInfo>
