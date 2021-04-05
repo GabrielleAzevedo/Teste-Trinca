@@ -2,11 +2,13 @@
 
 Projeto de gerenciamento de Criação de Churrasco com sua lista de participantes feito para o processo seletivo da Trinca feito em React.js
 
+
 ## Como executar?
 
 No diretório do projeto, execute
 
 ### `npm install`
+
 
 Depois, execute
 
