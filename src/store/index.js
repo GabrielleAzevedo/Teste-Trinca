@@ -5,7 +5,7 @@ const initialState = {
     barbecue: [
         {
             id:0,
-            date: '04-03-2021',
+            date: '2021-04-03',
             title: 'Níver Biel',
             description: 'Churras regado à muita cachaça e tals',
             numberParticipants: 2,
@@ -28,7 +28,7 @@ const initialState = {
         },
         {
             id:1,
-            date: '07-03-2021',
+            date: '2021-03-07',
             title: 'Níver Gabi',
             description: 'Churras regado à muita cachaça e tals',
             numberParticipants: 2,
@@ -55,8 +55,18 @@ const initialState = {
 
 function reducer(state = initialState, action){
     switch(action.type) {
-        case 'Add_Barbacue':
-            return { ...state, barbacue: [...state.barbacue, action.title] };
+        case 'ADD_BARBECUE':
+            return { 
+                ...state, 
+                barbecue: [...state.barbecue, {
+                    ...action,
+                 }]      
+            };
+        case 'ADD_PARTICIPANT':
+            return{
+                ...state,
+                barbecue:[...state.barbecue, {...action}]
+            }
         default:
             return state;
     } 

@@ -21,12 +21,14 @@ function Index() {
                     
                 )}
                 
-                <CardNewBbq>
-                    <Circle>
-                        <ChurrasIcon src={bbq} alt="Ícone Churrasco" />
-                    </Circle>
-                    <TextNewBbq>Adicionar Churras</TextNewBbq>
-                </CardNewBbq>
+                <Link to="/criarChurrasco">
+                    <CardNewBbq>
+                        <Circle>
+                            <ChurrasIcon src={bbq} alt="Ícone Churrasco" />
+                        </Circle>
+                        <TextNewBbq>Adicionar Churras</TextNewBbq>
+                    </CardNewBbq>
+                </Link>
             </Cards>
             
         </Container>

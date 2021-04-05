@@ -4,16 +4,42 @@ import Textarea from '../../components/Textarea/index';
 import Button from '../../components/Button/index';
 import {CreateBarbecue, Form} from './styles';
 import useForms from '../../Hooks/useForms';
+import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 
 const Index = () => {
 
+    const dispatch = useDispatch();
+
+    const history = useNavigate();
+
+    const idBbqStore = useSelector( state => state.numberId);
+
     const dateBbq = useForms();
     const titleBbq = useForms();
-    console.log(dateBbq.value);
+    const descriptionBbq = useForms();
+    const noDrinkBbq = useForms();
+    const drinkBbq = useForms();
 
     function handleSubmit(event){
         event.preventDefault();
+        dispatch(
+            { 
+                type: 'ADD_BARBECUE', 
+
+                id: idBbqStore+1,
+                date: dateBbq.value,
+                title: titleBbq.value,
+                description: descriptionBbq.value,
+                noDrink: noDrinkBbq.value,
+                withDrink: drinkBbq.value,
+                receivedMoney: 0,
+                numberParticipants: 0, 
+                participants: [],
+            }
+        );
+        return history('/');
     }
 
     return (
@@ -25,40 +51,34 @@ const Index = () => {
                     name="dateBbq"
                     required
                     {...dateBbq}
-                    // value={loginData.username}
-                    // onChange={formChange}
                 />
                 <Input 
                     label="Título" 
                     type="text" 
                     name="titleBbq"
                     required
-                    {...titleBbq}
-                    //  value={loginData.username}
-                    // onChange={formChange}
+                    {...titleBbq}                   
                 />
                 <Textarea 
                     label="Descrição"
-                    name="description"
-                
+                    name="descriptionBbq"
+                    {...descriptionBbq}                
                 />
                 <Input 
                     label="Valor sem bebida" 
                     type="number" 
-                    name="nodrink"
+                    name="noDrinkBbq"
                     required
-                    //  value={loginData.username}
-                    // onChange={formChange}
+                    {...noDrinkBbq}
                 />
                 <Input 
                     label="Valor com bebida" 
                     type="number" 
-                    name="drink"
+                    name="drinkBbq"
                     required
-                    //  value={loginData.username}
-                    // onChange={formChange}
+                    {...drinkBbq}
                 />
-                <Button>Criar Churrasco</Button>
+                <Button>Criar Churrasco</Button>                
             </Form>
         </CreateBarbecue>
     )
