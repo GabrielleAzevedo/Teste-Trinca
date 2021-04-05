@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container, Card,Form, Content, Select, Button, Option, List} from './styles';
+import {Container, Card, Form, Content, Select, Button, Option, List} from './styles';
 import Head from './BbqDetailsHeader/index';
 import ItemList from './ListParticipants/index';
 import Input from '../../components/Input/index'
@@ -7,47 +7,55 @@ import Input from '../../components/Input/index'
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import useForms from '../../Hooks/useForms';
+import { useNavigate } from 'react-router-dom';
+
 
 
 function Index() {
 
     let { id } = useParams();
-    const barbecue = useSelector(state => state.barbecue);
+    let barbecue = useSelector(state => state.barbecue);
     const bbqId = barbecue[id];
     
     const dispatch = useDispatch();
+    const history = useNavigate();
 
     const tempParticipants = bbqId.participants;
 
-    const nameParticipant = useForms();
+
+    let nameParticipant = useForms();
     const [select, setSelect] = React.useState(bbqId.withDrink);
 
     function handleSubmit(event){
         event.preventDefault();
 
+        let barb = barbecue;
+        barb[id].numberParticipants = barb[id].numberParticipants + 1;
+        barb[id].participants.push({
+            name: nameParticipant.value,
+            payed: false,
+            valuePayment: select,
+        });
+        console.log(barb);
         dispatch(
             { 
                 type: 'ADD_PARTICIPANT', 
-                
-                
-                participants:[
-                    {
-                        name: nameParticipant.value,
-                        valuePayment: select,
-                        payed: false,
-                    }
-                ]
+                barbecue:barb, 
             }
         );
-        console.log(barbecue);
+        nameParticipant.reset();
+        return history(`/detalhe/${id}`);
+     
     }
+
+   
 
     return (
         <Container>
             <Card>      
                 <Head dataBbq={bbqId}/>              
                 
-                    <Form onSubmit={handleSubmit}>
+                    <Form onSubmit={handleSubmit} >
                         <Content>
                             <Input 
                                 type="text" 
@@ -57,7 +65,7 @@ function Index() {
                                 {...nameParticipant}
                             />
                             <Select value={select} onChange={({target}) => setSelect(target.value)}>
-                                <Option selected value={bbqId.withDrink}>Com bebida (R${bbqId.withDrink})</Option>
+                                <Option value={bbqId.withDrink}>Com bebida (R${bbqId.withDrink})</Option>
                                 <Option value={bbqId.noDrink}>Sem bebida (R${bbqId.noDrink})</Option>
                                 {/* <Option value="otherValue">Outro</Option> */}
                             </Select>

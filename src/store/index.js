@@ -65,7 +65,7 @@ function reducer(state = initialState, action){
         case 'ADD_PARTICIPANT':
             return{
                 ...state,
-                barbecue:[...state.barbecue, {...action}]
+                barbecue: action.barbecue,
             }
         default:
             return state;

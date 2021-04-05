@@ -7,11 +7,16 @@ const useForms = () => {
     function onChange({target}){
         setValue(target.value);
     }
+
+    function reset(){
+        setValue('');
+    }
     
     return {
         value,
         setValue,
         onChange,
+        reset,
     }
 }
 

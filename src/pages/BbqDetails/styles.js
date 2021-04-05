@@ -26,7 +26,6 @@ export const Form = styled.form`
   justify-content: space-between;
   margin-bottom: 3rem;
   flex-direction: column;
-  
 `;
 
 export const Content = styled.form`
