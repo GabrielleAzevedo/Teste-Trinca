@@ -33,5 +33,10 @@ export const Input = styled.input`
   &::placeholder{
       font-style: italic;
   }
+
+  @media(max-width: 650px) {
+    width: 90%;    
+  }
+
 `;
 
