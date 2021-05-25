@@ -42,8 +42,7 @@ const Index = () => {
             },
             
         );
-        
-        
+            
         return history('/');
     }
 

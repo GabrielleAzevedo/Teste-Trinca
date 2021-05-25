@@ -7,10 +7,19 @@ export const Container = styled.div`
   justify-content: space-between;
   align-items: center;
 
+  @media(max-width: 650px) {
+    flex-direction: column;   
+  }
+
 `;
 
 export const Info = styled.div`
   width: 60%;
+
+  @media(max-width: 650px) {
+    width: 80%;   
+  }
+
 `;
 
 export const Date = styled.h1`
@@ -36,6 +45,14 @@ export const IconsDetail = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+
+  @media(max-width: 650px) {
+    width: 80%;
+
+    flex-direction: row;
+    justify-content: space-between;   
+  }
+
 `;
 
 export const IconInfo = styled.div`

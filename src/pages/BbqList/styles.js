@@ -12,6 +12,15 @@ export const Cards = styled.div`
   display: grid;
   grid-template-columns: auto auto auto;
   grid-gap: 3rem;
+
+  @media(max-width: 1024px) {
+    grid-template-columns: auto auto;
+  }
+
+  @media(max-width: 650px) {
+    grid-template-columns: auto;
+  }
+
 `;
 
 export const CardNewBbq = styled.div`
@@ -28,6 +37,13 @@ export const CardNewBbq = styled.div`
   flex-direction: column;
 
   cursor: pointer;
+
+  @media(max-width: 650px) {
+    width: 65vw;
+    max-width: 65vw;
+    height: 45vw;
+  }
+  
 `;
 
 export const Circle = styled.div`

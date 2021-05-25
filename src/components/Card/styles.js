@@ -21,6 +21,11 @@ export const Card = styled.div`
 
   cursor:pointer;
 
+  @media(max-width: 650px) {
+    width: 65vw;
+    max-width: 65vw;
+    height: 45vw;
+  }
 `;
 
 export const CardInfo = styled.div``;

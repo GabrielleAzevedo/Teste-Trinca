@@ -19,6 +19,10 @@ export const Card = styled.div`
 
   padding: 2rem;
 
+  @media(max-width: 650px) {
+    width: 90vw;    
+  }
+
 `;
 
 export const Form = styled.form`
@@ -47,6 +51,9 @@ export const Select = styled.select`
       outline:none;
   }
 
+  @media(max-width: 650px) {
+    width:90%;    
+  }
 
 `;
 
@@ -56,7 +63,7 @@ export const Option = styled.option`
 
 export const Button = styled.button`
   height: 5rem;
-  width: 10vw;
+  width: 15vw;
   max-width: 300px;
 
   margin-top: 3.6rem;
@@ -80,6 +87,15 @@ export const Button = styled.button`
     outline:none;
     font-size: 2rem;
   }
+
+  @media(max-width: 1024px) {
+    width: 20vw; 
+  }
+
+  @media(max-width: 650px) {
+    width: 30vw;   
+  }
+
 `;
 
 

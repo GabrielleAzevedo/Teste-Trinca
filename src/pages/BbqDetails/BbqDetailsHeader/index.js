@@ -8,11 +8,16 @@ function Index(props) {
 
     const headBbq = props.dataBbq;
     
-
+    let date = props.dataBbq.date;
+    const day = date.split('-')[2];
+    const month = date.split('-')[1];
+    date = `${day}/${month}`;
+    
+    
     return (
         <Container>
             <Info>
-                <Date>{headBbq.date}</Date>
+                <Date>{date}</Date>
                 <Title>{headBbq.title}</Title>
                 <Description>
                     {headBbq.description}     

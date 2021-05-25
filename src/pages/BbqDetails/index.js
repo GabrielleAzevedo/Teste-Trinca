@@ -104,7 +104,7 @@ function Index() {
                             {/* <Option value="otherValue">Outro</Option> */}
                         </Select>
                     
-                    <Button>Add</Button> 
+                    <Button>Adicionar</Button> 
                 </Form>
                 
                 <List> 

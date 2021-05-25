@@ -6,10 +6,16 @@ import money from '../../assets/icons/money.svg';
 function Index(props) {
 
     const barbecue = props.dadosbbq;
+
+    let date = barbecue.date;
+    const day = date.split('-')[2];
+    const month = date.split('-')[1];
+    date = `${day}/${month}`;
+
     return (
         <Card>
             <CardInfo>
-                <Date>{barbecue.date}</Date>
+                <Date>{date}</Date>
                 <Title>{barbecue.title}</Title>
                 <Description>{barbecue.description}</Description>
             </CardInfo>
@@ -20,7 +26,7 @@ function Index(props) {
                 </Number>
                 <Number> 
                     <Icon src={money} alt="Ícone Moeda" /> 
-                    <DataIcon> {barbecue.receivedMoney} </DataIcon>
+                    <DataIcon> R${barbecue.receivedMoney} </DataIcon>
 
                 </Number>
             </CardIcons>

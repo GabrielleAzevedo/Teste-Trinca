@@ -30,8 +30,9 @@ export const Input = styled.input`
     outline: none;
   }
 
-  {input:number::-webkit-inner-spin-button{
-    --webkit-appearance: none;
+  @media(max-width: 650px) {
+    width: 90%;    
   }
+
 `;
 
